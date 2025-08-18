@@ -33,3 +33,10 @@ async def test_factions():
     await dpytest.message("!factions 3")
     # The response should mention random factions and the number requested
     assert dpytest.verify().message().contains().content("Here are 3 random factions:")
+
+
+@pytest.mark.asyncio
+async def test_trivia_help():
+    await dpytest.message("!trivia")
+    # The response should show trivia commands help
+    assert dpytest.verify().message().contains().content("Trivia Game Commands:")
