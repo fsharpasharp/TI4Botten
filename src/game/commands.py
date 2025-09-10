@@ -138,6 +138,7 @@ class Game(commands.Cog):
             case discord.Member():
                 if not ctx.author.guild_permissions.administrator:
                     await ctx.send("Only admins can cancel games")
+                    return
             case _:
                 return
 
