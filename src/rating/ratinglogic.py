@@ -222,6 +222,7 @@ class RatingLogic:
                             game_state=game_model.GameState.FINISHED
                         )
                     )
+                    .order_by(text("played_count desc"))
                 ).all()
 
                 games = session.execute(
